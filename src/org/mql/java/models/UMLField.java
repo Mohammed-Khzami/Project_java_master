@@ -1,16 +1,23 @@
 package org.mql.java.models;
 
+import org.mql.java.enums.Modifiers;
+import org.mql.java.enums.Visibility;
+
+
+
 public class UMLField {
 	private String name;
-	private String modifier;
+	private Modifiers modifier;
+	private Visibility visibility;
 	private String type;
-	
-	public UMLField(String modifier, String type, String name) {
-		this.modifier = modifier;
-		this.type =type;
-		this.name = name;
+	public UMLField(String name, Modifiers modifiers, Visibility visibility, String type) {
+		this.name=name;
+		this.modifier=modifiers;
+		this.visibility=visibility;
+		this.type=type;
 	}
-
+	
+	
 	public String getName() {
 		return name;
 	}
@@ -19,12 +26,22 @@ public class UMLField {
 		this.name = name;
 	}
 
-	public String getModifier() {
+	
+
+	public Modifiers getModifier() {
 		return modifier;
 	}
 
-	public void setModifier(String modifier) {
+	public void setModifier(Modifiers modifier) {
 		this.modifier = modifier;
+	}
+
+	public Visibility getVisibility() {
+		return visibility;
+	}
+
+	public void setVisibility(Visibility visibility) {
+		this.visibility = visibility;
 	}
 
 	public String getType() {
@@ -34,5 +51,8 @@ public class UMLField {
 	public void setType(String type) {
 		this.type = type;
 	}
+
+	
+	
 	
 }

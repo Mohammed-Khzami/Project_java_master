@@ -2,15 +2,46 @@ package org.mql.java.models;
 
 import java.util.List;
 
+import org.mql.java.enums.Modifiers;
+import org.mql.java.enums.Visibility;
+
 public class UMLConstructor {
+	
 	 private String name;
-	 private String modifier;
-	 private List<String> params;
-	public UMLConstructor(String name, String modifier, List<String> params) {
-		super();
-		this.name = name;
+	 private Visibility visibility;
+	 private Modifiers modifier;
+	 private List<String> parameters;
+	
+	 
+	 
+	 public UMLConstructor(String name, Visibility visibility, Modifiers modifier, List<String> parameters) {
+			super();
+			this.name = name;
+			this.visibility = visibility;
+			this.modifier = modifier;
+			this.parameters = parameters;
+		}
+	public UMLConstructor() {
+		// TODO Auto-generated constructor stub
+	}
+	public Visibility getVisibility() {
+		return visibility;
+	}
+	public void setVisibility(Visibility visibility) {
+		this.visibility = visibility;
+	}
+	public List<String> getParameters() {
+		return parameters;
+	}
+	public void setParameters(List<String> parameters) {
+		this.parameters = parameters;
+	}
+	public Modifiers getModifier() {
+		return modifier;
+	}
+	
+	public void setModifier(Modifiers modifier) {
 		this.modifier = modifier;
-		this.params = params;
 	}
 	public String getName() {
 		return name;
@@ -18,16 +49,12 @@ public class UMLConstructor {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getModifier() {
-		return modifier;
-	}
-	public void setModifier(String modifier) {
-		this.modifier = modifier;
-	}
-	public List<String> getParams() {
-		return params;
-	}
-	public void setParams(List<String> params) {
-		this.params = params;
-	}
+	 @Override
+		public String toString() {
+			return "UMLConstructor [name=" + name + ", visibility=" + visibility + ", modifier=" + modifier
+					+ ", parameters=" + parameters + "]";
+		}
+	
+	
+
 }

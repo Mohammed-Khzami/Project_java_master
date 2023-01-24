@@ -2,17 +2,57 @@ package org.mql.java.models;
 
 import java.util.List;
 
+import org.mql.java.enums.Modifiers;
+import org.mql.java.enums.Visibility;
+
+
+
 public class UMLMethod {
+	
+
 	private String name;
 	private String returnType;
-	private String modifier;
-	private List<String> params;
-	
-	public UMLMethod(String name, String returnType, List<String> params, String modifier) {
+	private Visibility visibility;
+	private Modifiers modifier;
+	private List<String> parameters;
+	public UMLMethod(String name, String returnType, Visibility visibility, Modifiers modifier,
+			List<String> parameters) {
+		super();
 		this.name = name;
 		this.returnType = returnType;
+		this.visibility = visibility;
 		this.modifier = modifier;
-		this.params = params;
+		this.parameters = parameters;
+	}
+
+
+
+	public Visibility getVisibility() {
+		return visibility;
+	}
+
+
+
+	public void setVisibility(Visibility visibility) {
+		this.visibility = visibility;
+	}
+
+
+
+	public List<String> getParameters() {
+		return parameters;
+	}
+
+
+
+	public void setParameters(List<String> parameters) {
+		this.parameters = parameters;
+	}
+
+
+
+	public UMLMethod() {
+		// TODO Auto-generated constructor stub
 	}
 
 	public String getName() {
@@ -31,21 +71,24 @@ public class UMLMethod {
 		this.returnType = returnType;
 	}
 
-	public String getModifier() {
+	public Modifiers getModifier() {
 		return modifier;
 	}
 
-	public void setModifier(String modifier) {
+	
+	public void setModifier(Modifiers modifier) {
 		this.modifier = modifier;
 	}
 
 	public List<String> getParams() {
-		return params;
+		return parameters;
 	}
 
 	public void setParams(List<String> params) {
-		this.params = params;
+		this.parameters = params;
 	}
 
+	
+	
 	
 }
